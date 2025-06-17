@@ -2,6 +2,7 @@ import os
 from crewai import Agent , Task
 from src.providers import compound_llm
 from src.models import AllExtractedProducts
+from src.tools import web_scraping_tool, read_json
 output_dir = '/src/ai-agent-output'
 
 
