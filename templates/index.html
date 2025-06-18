@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Procurement Agents</title>
+  <link rel="stylesheet" href="./static/css/bootstrap.css">
+  <link rel="stylesheet" href="./static/css/main.css">
+  <style>
+    body {
+      background: linear-gradient(110deg, #f4f8fb 0%, #e9f5fa 100%);
+      min-height: 100vh;
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #3867d6 !important;
+      letter-spacing: 1px;
+    }
+    .github-link img {
+      margin-left: 10px;
+      transition: transform .2s;
+    }
+    .github-link:hover img {
+      transform: scale(1.13);
+    }
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #3867d6;
+      margin-bottom: .5rem;
+    }
+    .hero-desc {
+      font-size: 1.15rem;
+      color: #42516e;
+      margin-bottom: 2rem;
+    }
+    .form-card {
+      background: #fff;
+      border-radius: 1.5rem;
+      box-shadow: 0 6px 32px 0 rgba(45, 104, 222, 0.11);
+      padding: 2.5rem 2rem 2rem 2rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, #3867d6 0%, #48dbfb 100%);
+      border: none;
+      font-weight: 600;
+      padding-left: 2.2rem;
+      padding-right: 2.2rem;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #48dbfb 0%, #3867d6 100%);
+      box-shadow: 0 3px 16px rgba(45,104,222,0.10);
+    }
+    .footer {
+      background: #f4f7fb;
+      color: #7a7a7a;
+      font-size: 1rem;
+      padding: 22px 0 10px 0;
+      border-top-left-radius: 1.2rem;
+      border-top-right-radius: 1.2rem;
+      box-shadow: 0 -3px 24px rgba(67,97,238,0.04);
+      margin-top: 3rem;
+    }
+    label.form-label {
+      font-weight: 500;
+      color: #3867d6;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">🛒 Smart Procurement Agents</a>
+      <a href="https://github.com/IbrahimAlobid2/Smart-Procurement-Agents" target="_blank" class="github-link d-flex align-items-center text-decoration-none text-dark">
+        <span class="me-1">Source</span>
+        <img src="../static/img/github-logo.png" alt="GitHub" width="28" />
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="text-center mt-4 mb-0 pb-0">
+    <div class="container">
+      <div class="hero-title">Smart Procurement Agents</div>
+      <div class="hero-desc">Find the best product for your company with a single click! <span style="font-size:1.2em;">🚀</span></div>
+    </div>
+  </section>
+
+  <!-- Main Form Card -->
+  <div class="form-card shadow">
+    <form id="procurementForm" action="/" method="post" autocomplete="off">
+      <div class="mb-3">
+        <label for="productName" class="form-label">Product Name</label>
+        <input class="form-control" type="text" id="productName" name="product_name" placeholder="e.g., HP Laptop" required>
+      </div>
+      <div class="mb-3">
+        <label for="topRecommendationsNo" class="form-label">Number of Top Recommendations</label>
+        <input class="form-control" type="number" id="topRecommendationsNo" name="top_recommendations_no" min="1" max="10" placeholder="e.g., 2" required>
+      </div>
+      <div class="mb-3">
+        <label for="language" class="form-label">Language</label>
+        <select class="form-select" id="language" name="language" required>
+          <option value="">Select Language</option>
+          <option value="en">English</option>
+          <option value="ar">Arabic</option>
+        </select>
+      </div>
+      <div class="d-flex justify-content-center my-4">
+        <button type="submit" class="btn btn-primary btn-lg">🔍 Search</button>
+      </div>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="alert alert-warning">
+            {% for message in messages %}
+              <div>{{ message }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <small>© {{ year }} Smart Procurement Agents. All rights reserved.</small>
+  </footer>
+
+  <script src="./static/js/bootstrap.js"></script>
+  <script src="./static/js/jquery-3.7.1.min.js"></script>
+  <script src="./static/js/popper.min.js"></script>
+  <script src="./static/js/main.js"></script>
+</body>
+</html>

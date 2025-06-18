@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procurement Result</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <style>
+        body {
+            background: linear-gradient(110deg, #f4f8fb 0%, #e9f5fa 100%);
+            min-height: 100vh;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #3867d6 !important;
+        }
+        .github-link img {
+            margin-left: 10px;
+            transition: transform .2s;
+        }
+        .github-link:hover img {
+            transform: scale(1.13);
+        }
+        .card-success {
+            border-radius: 1.5rem;
+            box-shadow: 0 6px 32px 0 rgba(45, 104, 222, 0.08);
+            background: #fff;
+            padding: 2.2rem 1.5rem;
+            margin: 3rem auto;
+            max-width: 450px;
+        }
+        .card-success .fa-check-circle {
+            color: #35c96e;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .footer {
+            background: #f4f7fb;
+            color: #7a7a7a;
+            font-size: 1rem;
+            padding: 18px 0 12px 0;
+            margin-top: 3rem;
+            border-top-left-radius: 1.2rem;
+            border-top-right-radius: 1.2rem;
+            box-shadow: 0 -3px 24px rgba(67,97,238,0.04);
+        }
+    </style>
+    <!-- Font Awesome for icons (optional, you can remove if not needed) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">🛒 Smart Procurement Agents</a>
+            <a href="https://github.com/24-mohamedyehia/Smart-Procurement-Agents?tab=readme-ov-file" target="_blank" class="github-link d-flex align-items-center text-decoration-none text-dark">
+                <span class="me-1">Source</span>
+                <img src="../static/img/github-logo.png" alt="GitHub" width="28" />
+            </a>
+        </div>
+    </nav>
+
+    <!-- Result Card -->
+    <div class="container">
+        <div class="card-success text-center my-5">
+            <i class="fa-solid fa-circle-check fa-bounce"></i>
+            <h2 class="mt-2 mb-3 text-success">Report Generated Successfully!</h2>
+            <p class="mb-4 text-muted">Your procurement report is ready. You can preview it or download it now.</p>
+            <div class="d-flex justify-content-center gap-2 mb-3">
+                <a href="/preview/{{ website_file }}" target="_blank" class="btn btn-success px-4">Preview</a>
+                <a href="/download/{{ website_file }}" class="btn btn-primary px-4">Download</a>
+            </div>
+            <a href="/" class="btn btn-outline-secondary mt-1">← Back to Procurement</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <small>© {{ year }} Smart Procurement Agents. All rights reserved.</small>
+    </footer>
+</body>
+</html>
