@@ -1,7 +1,7 @@
 import os
 from crewai import Agent , Task
-from src.providers import compound_llm
-from src.models import SuggestedSearchQuerie
+from src.providers import compound_llm ,deepseek_v3__llm
+from src.models import SuggestedSearchQueries
 
 output_dir = '/src/ai-agent-output'
 
@@ -40,7 +40,7 @@ search_queries_recommendation_task = Task(
         "- site:opensooq.com 'iPhone 13 128GB black brand new Damascus'",
     ]),
     expected_output="A JSON object containing a list of suggested search queries.",
-    output_json=SuggestedSearchQuerie,
+    output_json=SuggestedSearchQueries,
     output_file=os.path.join(output_dir, "step_1_suggested_search_queries.json"),
     agent=search_queries_recommendation
 )

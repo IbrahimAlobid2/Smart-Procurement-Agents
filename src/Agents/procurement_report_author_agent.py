@@ -1,6 +1,6 @@
 from crewai import Agent, Task
 import os
-from src.providers import compound_llm
+from src.providers import compound_llm ,deepseek_v3__llm
 from src.tools import read_json
 
 output_dir = './src/ai-agent-output'
