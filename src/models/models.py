@@ -14,7 +14,7 @@ class SuggestedSearchQueries(BaseModel):
 
 class SingleSearchResult(BaseModel):
     title: str = Field(..., title="Title of the product page result")
-    url: HttpUrl = Field(..., title="The URL of the product page")
+    url: str = Field(..., title="The URL of the product page")
     content: str = Field(..., title="Brief snippet or page description")
     score: float = Field(..., ge=0.0, le=1.0, title="Confidence score (0-1)")
     search_query: str = Field(..., title="The search query that yielded this result")
@@ -29,10 +29,10 @@ class ProductSpec(BaseModel):
 
 
 class SingleExtractedProduct(BaseModel):
-    page_url: HttpUrl = Field(..., title="Original page URL", description="URL where the product was found")
+    page_url: str = Field(..., title="Original page URL", description="URL where the product was found")
     product_title: str = Field(..., title="Product title", description="The name/title of the product")
-    product_image_url: HttpUrl = Field(..., title="Image URL", description="Direct link to the product image")
-    product_url: HttpUrl = Field(..., title="Buy URL", description="URL for purchasing the product")
+    product_image_url: str = Field(..., title="Image URL", description="Direct link to the product image")
+    product_url: str = Field(..., title="Buy URL", description="URL for purchasing the product")
 
     product_current_price: float = Field(..., gt=0, title="Current price", description="Latest listed price of the product")
     product_original_price: Optional[float] = Field(
@@ -88,10 +88,10 @@ class ProductSpec_sec(BaseModel):
     specification_value: str
 
 class SingleExtractedProduct_sec(BaseModel):
-    page_url: HttpUrl
+    page_url: str
     product_title: str
-    product_image_url: HttpUrl
-    product_url: HttpUrl
+    product_image_url: str
+    product_url: str
     product_current_price: float
     product_original_price: float = None
     product_discount_percentage: float = None
